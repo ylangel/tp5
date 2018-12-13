@@ -19,4 +19,7 @@ return [
     ],
     'index' => 'index/index',
     'login' => 'login/login',
+    'admin' => 'admin/index',
+    'auth' => 'rbac/auth',
+    'role' => 'rbac/role',
 ];

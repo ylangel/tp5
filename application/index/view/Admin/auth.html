@@ -1,0 +1,74 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 20px;">
+            <ol class="breadcrumb">
+                <li><a>首页</a></li>
+                <li><a>权限管理</a></li>
+                <li class="active">权限列表</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    权限列表
+                </div>
+                <div class="panel-body">
+                    <table width="100%" class="table table-bordered" id="example-advanced" style="margin-bottom: 10px;">
+                        <thead>
+                        <tr>
+                            <th>权限名称</th>
+                            <th>路径</th>
+                            <th>状态</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach $rule_lists as $key=>$vo }
+                        <tr data-tt-id='{$key}'>
+                            <td><span class='folder'>{$vo.rule_name}</span></td>
+                            <td>{$vo.rule_path}</td>
+                            <td>{$vo.rule_status}</td>
+                            <td>{$vo.rule_sort}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs">编  辑</button>
+                                <button type="button" class="btn btn-danger btn-xs">删  除</button>
+                            </td>
+                        </tr>
+                            <!-- 二级菜单 -->
+                            {foreach :model('Rbac')->get_all_rule($vo.rule_id) as $k=>$v }
+                            <tr data-tt-id='{$key."-".$k}' data-tt-parent-id='{$key}'>
+                                <td><span class='folder'>{$v.rule_name}</span></td>
+                                <td>{$v.rule_path}</td>
+                                <td>{$v.rule_status}</td>
+                                <td>{$v.rule_sort}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-xs">编  辑</button>
+                                    <button type="button" class="btn btn-danger btn-xs">删  除</button>
+                                </td>
+                            </tr>
+                                <!-- 三级菜单 -->
+                                {foreach :model('Rbac')->get_all_rule($v.rule_id) as $ke=>$val }
+                                <tr data-tt-id='{$key."-".$k."-".$ke}' data-tt-parent-id='{$key."-".$k}'>
+                                    <td><span class=''>{$val.rule_name}</span></td>
+                                    <td>{$val.rule_path}</td>
+                                    <td>{$val.rule_status}</td>
+                                    <td>{$val.rule_sort}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-xs">编  辑</button>
+                                        <button type="button" class="btn btn-danger btn-xs">删  除</button>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                            {/foreach}
+                        {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

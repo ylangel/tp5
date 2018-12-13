@@ -142,6 +142,7 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
+        "__PUBLIC__" => "static",
         "__BOOT__" => "static/bootstrop",
         "__CSS__" => "static/css",
         "__IMG__" => "static/img",
