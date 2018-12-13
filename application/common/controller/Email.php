@@ -49,13 +49,13 @@ class Email
             $mail->SMTPSecure = 'ssl';          //使用安全协议
 
             //配置SMTP服务器信息
-            $mail->Host = "smtp.163.com";            //SMTP 服务器
+            $mail->Host = "***.com";            //SMTP 服务器
             $mail->Port = 465;                       //SMTP服务器的端口号
-            $mail->Username = "15935001979@163.com"; //SMTP服务器用户名
-            $mail->Password = "Zj847819559";         // SMTP服务器密码
+            $mail->Username = "15***@163.com"; //SMTP服务器用户名
+            $mail->Password = "***";         // SMTP服务器密码
 
             //设置发件人邮箱信息
-            $mail->SetFrom('15935001979@163.com', $this->sender_name);
+            $mail->SetFrom('***@163.com', $this->sender_name);
 
             //配置收件人邮箱信息
             $mail->AddAddress($this->receipt_email, $this->receipt_name);
@@ -87,12 +87,12 @@ class Email
 /*$email = new Email();
         $email->title = "来自未来的邮件";
         $email->sender_name = "杰宝";
-        $email->receipt_email = "15935001979@sina.cn";
+        $email->receipt_email = "***@sina.cn";
         $email->receipt_name = "杰宝杰宝two";
-        $email->reply_email = "847819559@qq.com";
-        $email->reply_name = "赵杰";
+        $email->reply_email = "***@qq.com";
+        $email->reply_name = "**杰";
         $email->attachment = "static/img/login.jpg";
         $email->attachment_name = "ceshi.jpg";
-        $email->content = "<h1>你好赵杰</h1><p>我是未来的你</p>";
+        $email->content = "<h1>你好**杰</h1><p>我是未来的你</p>";
         $res = $email->email();
         dump($res);*/
