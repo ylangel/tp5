@@ -36,7 +36,7 @@ class Common extends Controller
                 ->select();
             $this->com_data["rule_list"] = $rule_list;
 
-            $this->view->engine->layout('Layout/header');
+
         } else {
             $this->redirect("/login.html");
         }
