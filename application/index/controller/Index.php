@@ -48,26 +48,22 @@ class Index extends Common
 
     public function error_500()
     {
-
         return $this->fetch("/index/error-500",$this->com_data);
     }
 
     public function mdi()
     {
-
         $this->view->engine->layout('Layout/header');
         return $this->fetch("/index/mdi",$this->com_data);
     }
 
     public function register()
     {
-
         return $this->fetch("/index/register",$this->com_data);
     }
 
     public function typography()
     {
-
         $this->view->engine->layout('Layout/header');
         return $this->fetch("/index/typography",$this->com_data);
     }
