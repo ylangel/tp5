@@ -1,0 +1,47 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="">分类</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">拼多多分类</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">拼多多一级分类</h4>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th style="width:20%;">ID</th>
+                                <th style="width:20%;">级别</th>
+                                <th style="width:20%;">分类名称</th>
+                                <th style="width:20%;">父级ID</th>
+                                <th style="width:20%;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {foreach $cates as $key=>$vo }
+                            <tr>
+                                <td>{$vo.cat_id}</td>
+                                <td>{$vo.level}</td>
+                                <td>{$vo.cat_name}</td>
+                                <td>{$vo.parent_cat_id}</td>
+                                <td>
+                                    <button type="button" class="btn btn-inverse-success">下级分类</button>
+                                    <button type="button" class="btn btn-inverse-info">编辑</button>
+                                    <button type="button" class="btn btn-inverse-danger">删除</button>
+                                </td>
+                            </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

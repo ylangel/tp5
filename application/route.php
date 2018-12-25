@@ -33,4 +33,9 @@ return [
     'mdi' => 'index/mdi',
     'register' => 'index/register',
     'typography' => 'index/typography',
+    'test' => 'test/pddDdkGoodsSearch',
+
+
+    'cate' => 'cate/cateList',
+    'childCate' => 'cate/childCateList',
 ];

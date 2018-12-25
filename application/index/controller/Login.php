@@ -40,6 +40,7 @@ class Login extends Controller
                 }
                 $ruth['ids'] = implode(',',$ruth_id);
                 $ruth['paths'] = implode(',',$ruth_path);
+                Session::init(['prefix' => 'yl', 'auto_start' => true, 'expire' => 86400]);
                 Session::set("user_auth",$ruth);
                 return json(['data'=>"",'code'=>1,'message'=>'登录成功']);
             } else {
