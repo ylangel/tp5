@@ -1,6 +1,6 @@
 <?php
 
-namespace app\common\controller;
+namespace app\common\model;
 
 class PddSdk
 {

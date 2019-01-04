@@ -37,5 +37,5 @@ return [
 
 
     'cate' => 'cate/cateList',
-    'childCate' => 'cate/childCateList',
+    'aa' => 'cate/aa',
 ];

@@ -31,14 +31,19 @@
                                 <td>{$vo.cat_name}</td>
                                 <td>{$vo.parent_cat_id}</td>
                                 <td>
-                                    <button type="button" class="btn btn-inverse-success">下级分类</button>
-                                    <button type="button" class="btn btn-inverse-info">编辑</button>
-                                    <button type="button" class="btn btn-inverse-danger">删除</button>
+                                    {if $vo.level != '3'}
+                                    <a href="cate.html?cat_id={$vo.cat_id}" target="_blank"><button type="button" class="btn btn-inverse-success btn-sm">下级分类</button></a>
+                                    {/if}
+                                    <button type="button" class="btn btn-inverse-info btn-sm">编辑</button>
+                                    <button type="button" class="btn btn-inverse-danger btn-sm">删除</button>
                                 </td>
                             </tr>
                             {/foreach}
                             </tbody>
                         </table>
+                    </div>
+                    <div class="card-footer">
+                        {$page}
                     </div>
                 </div>
             </div>

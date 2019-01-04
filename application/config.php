@@ -244,4 +244,13 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //多多进宝
+    'pdd'               => [
+        'promotion_url' => [
+            "generate_short_url" => 'true',
+            "generate_weapp_webview" => 'true',
+            "custom_parameters" => "YL_".date("YmdHis")
+        ],
+    ],
 ];
